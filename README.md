@@ -1,0 +1,2 @@
+# GuitarScales
+Guitar scales vizualisation
