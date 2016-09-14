@@ -18,8 +18,10 @@ int intervalWithBaseNote = 0;
 int globalCursor = 0;
 int caseWidth = 26; // largeur de case
 int caseHeight = 32; // hauteur de la case
+int dotSize = 14;
+int ellipseSize = 24;
 
-color colorBg = color(240, 240, 240);
+color colorBg = color(235, 235, 235);
 color colorBgAlt = color(255,255,255);
 color colorMain = color(38, 49, 58);
 color colorComp = color(206, 209, 218);
@@ -29,7 +31,7 @@ color colorContrast = color(114, 229, 72);
 
 void setup(){
   size(1232, 480);
-  background(0);
+  background(colorMain);
 
   setupGUI();
 }
@@ -59,51 +61,41 @@ void draw(){
 
 void guiComplements(){
 
+
+  // Légende à côté des champs qui contrôlent le sketch
   if(mode == modes[0]){
     // baseNote (mode ionien)
     noFill();
     strokeWeight(4);
     stroke(colorContrast, 125);
-    ellipse(312, 72, 28, 28);
+    ellipse(312, 72, ellipseSize, ellipseSize);
 
     noStroke();
     fill(colorContrast);
-    ellipse(312, 72, 16, 16);
+    ellipse(312, 72, dotSize, dotSize);
 
     // ionian note
     noStroke();
     fill(colorContrast);
-    ellipse(616, 72, 16, 16);
+    ellipse(616, 72, dotSize, dotSize);
   }
   else{
     // baseNote (mode ionien)
     noFill();
     strokeWeight(4);
     stroke(colorComp);
-    ellipse(312, 72, 28, 28);
+    ellipse(312, 72, ellipseSize, ellipseSize);
 
     noStroke();
     fill(colorMain);
-    ellipse(312, 72, 16, 16);
+    ellipse(312, 72, dotSize, dotSize);
 
     // ionian note
     noStroke();
     fill(colorContrast);
-    ellipse(616, 72, 16, 16);
+    ellipse(616, 72, dotSize, dotSize);
   }
 
-
-
-
-
-
-  // if(j == 0){
-  //   stroke(colorContrast, 125);
-  // }
-
-  // baseNote (mode autre)
-
-  // n
 }
 
 // Récupère l'intervalle entre la note (string) en paramètre ionianNotesUpdate, donc la liste des notes triée à partir de la BaseNote
@@ -257,7 +249,7 @@ void drawNotes(int indexStartNote, int yPos){
         }
       }
 
-      ellipse(i*caseWidth-(caseWidth/2), yp, 16, 16); // Puis, dessin des notes
+      ellipse(i*caseWidth-(caseWidth/2), yp, dotSize, dotSize); // Puis, dessin des notes
 
       // Active interval ? ?
       if(j == intervalWithBaseNote){ // baseNote
@@ -269,7 +261,7 @@ void drawNotes(int indexStartNote, int yPos){
           stroke(colorContrast, 125);
         }
 
-        ellipse(i*caseWidth-(caseWidth/2), yp, 28, 28);
+        ellipse(i*caseWidth-(caseWidth/2), yp, ellipseSize, ellipseSize);
       }
     }
 
