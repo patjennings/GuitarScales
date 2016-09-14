@@ -54,6 +54,56 @@ void draw(){
   drawNotes(retrieveInterval("E"), 196); // E string
 
   drawGUI();
+  guiComplements();
+}
+
+void guiComplements(){
+
+  if(mode == modes[0]){
+    // baseNote (mode ionien)
+    noFill();
+    strokeWeight(4);
+    stroke(colorContrast, 125);
+    ellipse(312, 72, 28, 28);
+
+    noStroke();
+    fill(colorContrast);
+    ellipse(312, 72, 16, 16);
+
+    // ionian note
+    noStroke();
+    fill(colorContrast);
+    ellipse(616, 72, 16, 16);
+  }
+  else{
+    // baseNote (mode ionien)
+    noFill();
+    strokeWeight(4);
+    stroke(colorComp);
+    ellipse(312, 72, 28, 28);
+
+    noStroke();
+    fill(colorMain);
+    ellipse(312, 72, 16, 16);
+
+    // ionian note
+    noStroke();
+    fill(colorContrast);
+    ellipse(616, 72, 16, 16);
+  }
+
+
+
+
+
+
+  // if(j == 0){
+  //   stroke(colorContrast, 125);
+  // }
+
+  // baseNote (mode autre)
+
+  // n
 }
 
 // Récupère l'intervalle entre la note (string) en paramètre ionianNotesUpdate, donc la liste des notes triée à partir de la BaseNote

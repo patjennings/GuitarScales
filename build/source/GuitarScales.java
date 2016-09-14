@@ -73,6 +73,56 @@ public void draw(){
   drawNotes(retrieveInterval("E"), 196); // E string
 
   drawGUI();
+  guiComplements();
+}
+
+public void guiComplements(){
+
+  if(mode == modes[0]){
+    // baseNote (mode ionien)
+    noFill();
+    strokeWeight(4);
+    stroke(colorContrast, 125);
+    ellipse(312, 72, 28, 28);
+
+    noStroke();
+    fill(colorContrast);
+    ellipse(312, 72, 16, 16);
+
+    // ionian note
+    noStroke();
+    fill(colorContrast);
+    ellipse(616, 72, 16, 16);
+  }
+  else{
+    // baseNote (mode ionien)
+    noFill();
+    strokeWeight(4);
+    stroke(colorComp);
+    ellipse(312, 72, 28, 28);
+
+    noStroke();
+    fill(colorMain);
+    ellipse(312, 72, 16, 16);
+
+    // ionian note
+    noStroke();
+    fill(colorContrast);
+    ellipse(616, 72, 16, 16);
+  }
+
+
+
+
+
+
+  // if(j == 0){
+  //   stroke(colorContrast, 125);
+  // }
+
+  // baseNote (mode autre)
+
+  // n
 }
 
 // R\u00e9cup\u00e8re l'intervalle entre la note (string) en param\u00e8tre ionianNotesUpdate, donc la liste des notes tri\u00e9e \u00e0 partir de la BaseNote
@@ -290,7 +340,7 @@ public void setupGUI(){
   List referenceDegreeList = Arrays.asList("Ionian note", "Eolian/Minor note");
   /* add a ScrollableList, by default it behaves like a DropdownList */
   dropdown1 = cp5.addScrollableList("baseNotes")
-     .setPosition(312, 64)
+     .setPosition(336, 64)
      .setSize(96, 100)
      .setBarHeight(16)
      .setItemHeight(16)
@@ -301,8 +351,8 @@ public void setupGUI(){
      .close()
      ;
   dropdown2 = cp5.addScrollableList("Modes")
-     .setPosition(424, 64)
-     .setSize(192, 100)
+     .setPosition(448, 64)
+     .setSize(128, 100)
      .setBarHeight(16)
      .setItemHeight(16)
      .addItems(modesList)
@@ -324,12 +374,12 @@ public void setupGUI(){
       ;
   cp5.addTextlabel("dd1Label")
       .setText("Base Note")
-      .setPosition(312,32)
+      .setPosition(336,32)
       .setColorValue(colorMain)
       ;
   cp5.addTextlabel("dd2Label")
       .setText("Mode")
-      .setPosition(424,32)
+      .setPosition(448,32)
       .setColorValue(colorMain)
       ;
   cp5.addTextlabel("dd3Label")

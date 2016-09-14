@@ -14,7 +14,7 @@ void setupGUI(){
   List referenceDegreeList = Arrays.asList("Ionian note", "Eolian/Minor note");
   /* add a ScrollableList, by default it behaves like a DropdownList */
   dropdown1 = cp5.addScrollableList("baseNotes")
-     .setPosition(312, 64)
+     .setPosition(336, 64)
      .setSize(96, 100)
      .setBarHeight(16)
      .setItemHeight(16)
@@ -25,8 +25,8 @@ void setupGUI(){
      .close()
      ;
   dropdown2 = cp5.addScrollableList("Modes")
-     .setPosition(424, 64)
-     .setSize(192, 100)
+     .setPosition(448, 64)
+     .setSize(128, 100)
      .setBarHeight(16)
      .setItemHeight(16)
      .addItems(modesList)
@@ -48,12 +48,12 @@ void setupGUI(){
       ;
   cp5.addTextlabel("dd1Label")
       .setText("Base Note")
-      .setPosition(312,32)
+      .setPosition(336,32)
       .setColorValue(colorMain)
       ;
   cp5.addTextlabel("dd2Label")
       .setText("Mode")
-      .setPosition(424,32)
+      .setPosition(448,32)
       .setColorValue(colorMain)
       ;
   cp5.addTextlabel("dd3Label")
